@@ -1,0 +1,277 @@
+/* medium-font-weight: 500;
+bold-font-weight: 700;
+extra-bold-font-weight: 800; */
+
+* {
+    margin: 0;
+    font: inherit;
+}
+
+*
+*::before,
+*::after { 
+    box-sizing: border-box;
+}
+
+img,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+:root {
+    --section-1-primary-color: 73, 54, 242;
+    --section-1-secondary-color: 103, 67, 255;
+    --section-1-font-color: 255, 255, 255;
+    --section-2-font-color: 73, 74, 97;
+    --summary-tab-1-color: 255, 85, 85;
+    --summary-tab-2-color: 255, 178, 30;
+    --summary-tab-3-color: 0, 187, 143;
+    --summary-tab-4-color: 17, 37, 214;
+
+    --section-1-background-color: linear-gradient(to top, rgb(var(--section-1-primary-color)), rgb(var(--section-1-secondary-color)));
+    --score-gradient-color: linear-gradient(to bottom, rgb(74, 35, 204), var(--section-1-primary-color));
+    --section-1-font-color-100: rgb(var(--section-1-font-color), 0.7);
+    --section-1-font-color-500: rgb(var(--section-1-font-color));
+    --summary-section-header-color: rgb(var(--section-2-font-color));
+    --summary-tab-numerator-color: rgb(var(--section-2-font-color));
+    --summary-tab-denominator-color: rgb(var(--section-2-font-color), 0.5);
+
+    --summary-tab-1-background-color: rgb(var(--summary-tab-1-color), 0.13);
+    --summary-tab-1-text-color: rgb(var(--summary-tab-1-color));
+    --summary-tab-2-background-color: rgb(var(--summary-tab-2-color), 0.13);
+    --summary-tab-2-text-color: rgb(var(--summary-tab-2-color));
+    --summary-tab-3-background-color: rgb(var(--summary-tab-3-color), 0.13);
+    --summary-tab-3-text-color: rgb(var(--summary-tab-3-color));
+    --summary-tab-4-background-color: rgb(var(--summary-tab-4-color), 0.13);
+    --summary-tab-4-text-color: rgb(var(--summary-tab-4-color));
+
+    --button-background-color: rgb(48, 59, 89);
+    --button-text-color: rgb(var(--section-1-font-color));
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+main {
+    /* place-content: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.score-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 50vw;
+    height: 450px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.1);
+}
+
+.score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+    background-image: var(--section-1-background-color);
+    border-radius: 20px;
+}
+
+.score-section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    height: 100%;
+    /* border: 2px solid black; */
+}
+
+.score-header {
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid white; */
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 1.3em;
+    color: var(--section-1-font-color-100);
+    margin-bottom: -22px;
+}
+
+.user-score {
+    background-image: linear-gradient(to bottom, rgb(76, 34, 203), rgb(72, 53, 241));
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 1em;
+    color: var(--section-1-font-color-100);
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#avg-score {
+    font-size: 3.9em;
+    color: var(--section-1-font-color-500);
+}
+
+#total-score {
+    font-size: 1em;
+    opacity: 0.4;
+}
+
+.score-remark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#score-remark-title {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+    color: var(--section-1-font-color-500);
+    font-size: 1.6em;
+    margin-top: -30px;
+    margin-bottom: 12px;
+}
+
+#score-remark-paragraph {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+    color: var(--section-1-font-color-500);
+    opacity: 0.4;
+    font-size: 1em;
+    text-align: center;
+}
+
+.summary-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: center;
+    /* border: 2px solid red; */
+}
+
+.summary-section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: center;
+    width: 80%;
+    height: 100%;
+}
+
+.summary-section-content .summary-header {
+    align-self: flex-start;
+}
+
+.summary-header {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 1.3em;
+    margin-bottom: 14px;
+    opacity: 0.8;
+}
+
+.summary-tab-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* border: 3px solid green; */
+    height: 60%;
+    width: 100%
+}
+
+.summary-sub-tab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+.summary-sub-tab p {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+.summary-tab-item {
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid blue; */
+    padding: 10px;
+    border-radius: 7px;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5;
+}
+
+svg {
+    margin-right: 7px;
+}
+
+.tab-1 {
+    background-color: var(--summary-tab-1-background-color);
+}
+
+.tab-1 p[class="summary-tab-title"] {
+    color: var(--summary-tab-1-text-color);
+}
+
+.tab-2 {
+    background-color: var(--summary-tab-2-background-color);
+}
+
+.tab-2 p[class="summary-tab-title"] {
+    color: var(--summary-tab-2-text-color);
+}
+
+.tab-3 {
+    background-color: var(--summary-tab-3-background-color);
+}
+
+.tab-3 p[class="summary-tab-title"] {
+    color: var(--summary-tab-3-text-color);
+}
+
+.tab-4 {
+    background-color: var(--summary-tab-4-background-color);
+}
+
+.tab-4 p[class="summary-tab-title"] {
+    color: var(--summary-tab-4-text-color);
+}
+
+.summary-tab-score {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 500;
+    opacity: 0.6;
+}
+
+#numerator-score {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+}
+
+.button {
+    width: 100%;
+    line-height: 2.8;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border-radius: 30px;
+    border: none;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 700;
+    margin-top: 23px;
+}
+
